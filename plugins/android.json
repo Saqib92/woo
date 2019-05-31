@@ -1,0 +1,55 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    },
+    "cordova-plugin-email-composer": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    },
+    "cordova-plugin-native-spinner": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    },
+    "cordova-plugin-themeablebrowser": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.gridsapps.holylandhands"
+    }
+  }
+}
