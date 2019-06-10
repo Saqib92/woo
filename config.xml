@@ -95,5 +95,4 @@
     </feature>
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <plugin name="cordova-plugin-email-composer" spec="^0.8.15" />
-    <plugin name="onesignal-cordova-plugin" spec="^2.2.4" />
 </widget>

@@ -85,7 +85,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { AdMobFree} from '@ionic-native/admob-free';
 import { FCM } from '@ionic-native/fcm';
 import { AppVersion } from '@ionic-native/app-version';
-import { OneSignal } from '@ionic-native/onesignal';
+//import { OneSignal } from '@ionic-native/onesignal';
 import { LocationDataProvider } from '../providers/location-data/location-data';
 import { SpinnerDialog } from '@ionic-native/spinner-dialog';
 import { ThemeableBrowser } from '@ionic-native/themeable-browser';
@@ -274,7 +274,7 @@ import { RewardPointsPage } from '../pages/reward-points/reward-points';
     FCM,
     EmailComposer,
     AppVersion,
-    OneSignal,
+//    OneSignal,
     LocationDataProvider,
     SpinnerDialog,
     ThemeableBrowser

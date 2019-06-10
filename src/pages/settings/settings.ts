@@ -21,7 +21,7 @@ import { CartPage } from '../cart/cart';
 import { SearchPage } from '../search/search';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { AppVersion } from '@ionic-native/app-version';
-import { OneSignal } from '@ionic-native/onesignal';
+//import { OneSignal } from '@ionic-native/onesignal';
 
 
 
@@ -46,7 +46,7 @@ export class SettingsPage {
     private socialSharing: SocialSharing,
     public plt: Platform,
     private appVersion: AppVersion,
-    private oneSignal: OneSignal,
+    //private oneSignal: OneSignal,
   ) {
 
   }
@@ -90,9 +90,9 @@ export class SettingsPage {
   //============================================================================================
   //turning on off local  notification
   onOffPushNotification(value) {
-    if (value == false) { this.oneSignal.setSubscription(false); }
-    else { this.oneSignal.setSubscription(true); }
-    this.updateSetting();
+    // if (value == false) { this.oneSignal.setSubscription(false); }
+    // else { this.oneSignal.setSubscription(true); }
+    // this.updateSetting();
   };
   hideShowFooterMenu() {
     this.events.publish('setting', this.setting);

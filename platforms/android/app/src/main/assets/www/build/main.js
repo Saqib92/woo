@@ -70,8 +70,8 @@ var LoadingProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_alert_alert__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ngx_translate_core__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__reviews_reviews__ = __webpack_require__(425);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__store_store__ = __webpack_require__(430);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__reviews_reviews__ = __webpack_require__(424);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__store_store__ = __webpack_require__(429);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -838,7 +838,7 @@ var Home3Page = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_animations__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__categorie_pages_sub_categories_sub_categories__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__categorie_pages_sub_categories_sub_categories__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cart_cart__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__search_search__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__products_products__ = __webpack_require__(22);
@@ -948,7 +948,7 @@ var Home4Page = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_animations__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__categorie_pages_sub_categories6_sub_categories6__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__categorie_pages_sub_categories6_sub_categories6__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cart_cart__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__search_search__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__products_products__ = __webpack_require__(22);
@@ -1470,13 +1470,12 @@ var SelectZonesPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_loading_loading__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__login_login__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__my_account_my_account__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__my_account_my_account__ = __webpack_require__(243);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__cart_cart__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__search_search__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_social_sharing__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_app_version__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_onesignal__ = __webpack_require__(237);
 // Project Name: Ionic woocommerce
 // Project URI: http://themes-coder.com/products/ionic-woocommerce/
 // Author: themes-coder Team
@@ -1508,9 +1507,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
+//import { OneSignal } from '@ionic-native/onesignal';
 var SettingsPage = /** @class */ (function () {
-    function SettingsPage(navCtrl, navParams, modalCtrl, config, storage, loading, http, localNotifications, events, shared, iab, socialSharing, plt, appVersion, oneSignal) {
+    function SettingsPage(navCtrl, navParams, modalCtrl, config, storage, loading, http, localNotifications, events, shared, iab, socialSharing, plt, appVersion) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.modalCtrl = modalCtrl;
@@ -1525,7 +1524,6 @@ var SettingsPage = /** @class */ (function () {
         this.socialSharing = socialSharing;
         this.plt = plt;
         this.appVersion = appVersion;
-        this.oneSignal = oneSignal;
         this.setting = {};
     }
     SettingsPage.prototype.turnOnOffNotification = function (value) {
@@ -1565,13 +1563,9 @@ var SettingsPage = /** @class */ (function () {
     //============================================================================================
     //turning on off local  notification
     SettingsPage.prototype.onOffPushNotification = function (value) {
-        if (value == false) {
-            this.oneSignal.setSubscription(false);
-        }
-        else {
-            this.oneSignal.setSubscription(true);
-        }
-        this.updateSetting();
+        // if (value == false) { this.oneSignal.setSubscription(false); }
+        // else { this.oneSignal.setSubscription(true); }
+        // this.updateSetting();
     };
     ;
     SettingsPage.prototype.hideShowFooterMenu = function () {
@@ -1666,8 +1660,7 @@ var SettingsPage = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_13__ionic_native_in_app_browser__["a" /* InAppBrowser */],
             __WEBPACK_IMPORTED_MODULE_16__ionic_native_social_sharing__["a" /* SocialSharing */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["x" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_17__ionic_native_app_version__["a" /* AppVersion */],
-            __WEBPACK_IMPORTED_MODULE_18__ionic_native_onesignal__["a" /* OneSignal */]])
+            __WEBPACK_IMPORTED_MODULE_17__ionic_native_app_version__["a" /* AppVersion */]])
     ], SettingsPage);
     return SettingsPage;
 }());
@@ -1696,8 +1689,8 @@ var SettingsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__products_products__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ngx_translate_core__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_alert_alert__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_coupon_coupon__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__address_pages_shipping_address_shipping_address__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_coupon_coupon__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__address_pages_shipping_address_shipping_address__ = __webpack_require__(239);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2560,7 +2553,7 @@ var ProductsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 238:
+/***/ 237:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2694,7 +2687,7 @@ var SignUpPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 239:
+/***/ 238:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3164,7 +3157,7 @@ var CouponProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 240:
+/***/ 239:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3177,7 +3170,7 @@ var CouponProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__select_country_select_country__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__select_zones_select_zones__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__billing_address_billing_address__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__billing_address_billing_address__ = __webpack_require__(431);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_location_data_location_data__ = __webpack_require__(82);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3267,7 +3260,7 @@ var ShippingAddressPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 241:
+/***/ 240:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3370,7 +3363,7 @@ var SubCategoriesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 242:
+/***/ 241:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3473,7 +3466,7 @@ var SubCategories6Page = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 243:
+/***/ 242:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3482,7 +3475,7 @@ var SubCategories6Page = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_config_config__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_categories_sub_categories__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_categories_sub_categories__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_animations__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__cart_cart__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__search_search__ = __webpack_require__(21);
@@ -3566,7 +3559,7 @@ var CategoriesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 244:
+/***/ 243:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3666,7 +3659,7 @@ var MyAccountPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 245:
+/***/ 244:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3679,7 +3672,7 @@ var MyAccountPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_loading_loading__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_alert_alert__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__order_detail_order_detail__ = __webpack_require__(439);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__order_detail_order_detail__ = __webpack_require__(438);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cart_cart__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__search_search__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__products_products__ = __webpack_require__(22);
@@ -3801,7 +3794,7 @@ var MyOrdersPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 246:
+/***/ 245:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3813,8 +3806,8 @@ var MyOrdersPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__news_detail_news_detail__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__news_list_news_list__ = __webpack_require__(440);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__news_detail_news_detail__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__news_list_news_list__ = __webpack_require__(439);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cart_cart__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__search_search__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -4009,7 +4002,7 @@ var NewsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 247:
+/***/ 246:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4058,7 +4051,7 @@ var NewsDetailPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 248:
+/***/ 247:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4067,7 +4060,7 @@ var NewsDetailPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_config_config__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_categories2_sub_categories2__ = __webpack_require__(442);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_categories2_sub_categories2__ = __webpack_require__(441);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_animations__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__cart_cart__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__search_search__ = __webpack_require__(21);
@@ -4150,7 +4143,7 @@ var Categories2Page = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 249:
+/***/ 248:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4159,7 +4152,7 @@ var Categories2Page = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_config_config__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_categories4_sub_categories4__ = __webpack_require__(443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_categories4_sub_categories4__ = __webpack_require__(442);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_animations__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__cart_cart__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__search_search__ = __webpack_require__(21);
@@ -4238,7 +4231,7 @@ var Categories4Page = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 250:
+/***/ 249:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4318,7 +4311,7 @@ var Categories5Page = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 251:
+/***/ 250:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4327,7 +4320,7 @@ var Categories5Page = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_config_config__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_categories3_sub_categories3__ = __webpack_require__(444);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_categories3_sub_categories3__ = __webpack_require__(443);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_animations__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__cart_cart__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__search_search__ = __webpack_require__(21);
@@ -4410,7 +4403,7 @@ var Categories3Page = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 252:
+/***/ 251:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4419,7 +4412,7 @@ var Categories3Page = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_config_config__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_categories6_sub_categories6__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_categories6_sub_categories6__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_animations__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__cart_cart__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__search_search__ = __webpack_require__(21);
@@ -4497,7 +4490,7 @@ var Categories6Page = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 267:
+/***/ 266:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -4510,11 +4503,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 267;
+webpackEmptyAsyncContext.id = 266;
 
 /***/ }),
 
-/***/ 310:
+/***/ 309:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -4527,7 +4520,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 310;
+webpackEmptyAsyncContext.id = 309;
 
 /***/ }),
 
@@ -4602,7 +4595,7 @@ var AlertProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_local_notifications__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_woocommerce_api__ = __webpack_require__(527);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_woocommerce_api__ = __webpack_require__(526);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_woocommerce_api___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_woocommerce_api__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__alert_alert__ = __webpack_require__(39);
 // Project Name: Ionic woocommerce
@@ -4887,7 +4880,7 @@ var ConfigProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 425:
+/***/ 424:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4895,7 +4888,7 @@ var ConfigProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_config_config__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__add_review_add_review__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__add_review_add_review__ = __webpack_require__(425);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(92);
@@ -5034,7 +5027,7 @@ var ReviewsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 426:
+/***/ 425:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5166,7 +5159,7 @@ var AddReviewPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 427:
+/***/ 426:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5252,7 +5245,7 @@ var ForgotPasswordPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 430:
+/***/ 429:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5262,7 +5255,7 @@ var ForgotPasswordPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_config_config__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_email_composer__ = __webpack_require__(431);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_email_composer__ = __webpack_require__(430);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5377,7 +5370,7 @@ var StorePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 432:
+/***/ 431:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5387,7 +5380,7 @@ var StorePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__select_country_select_country__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__select_zones_select_zones__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shipping_method_shipping_method__ = __webpack_require__(433);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shipping_method_shipping_method__ = __webpack_require__(432);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_location_data_location_data__ = __webpack_require__(82);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5526,7 +5519,7 @@ var BillingAddressPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 433:
+/***/ 432:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5542,7 +5535,7 @@ var BillingAddressPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_spinner_dialog__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ngx_translate_core__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_storage__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__order_order__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__order_order__ = __webpack_require__(433);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5956,7 +5949,7 @@ var ShippingMethodPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 434:
+/***/ 433:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5969,7 +5962,7 @@ var ShippingMethodPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_loading_loading__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_alert_alert__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_coupon_coupon__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_coupon_coupon__ = __webpack_require__(238);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_in_app_browser__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_spinner_dialog__ = __webpack_require__(115);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -6189,7 +6182,7 @@ var OrderPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 435:
+/***/ 434:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6271,7 +6264,7 @@ var IntroPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 436:
+/***/ 435:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6408,7 +6401,7 @@ var ContactUsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 437:
+/***/ 436:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6509,7 +6502,7 @@ var AboutUsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 438:
+/***/ 437:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6606,7 +6599,7 @@ var WishListPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 439:
+/***/ 438:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6779,14 +6772,14 @@ var OrderDetailPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 440:
+/***/ 439:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewsListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__news_detail_news_detail__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__news_detail_news_detail__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_config_config__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(10);
@@ -6894,7 +6887,7 @@ var NewsListPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 442:
+/***/ 441:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6990,7 +6983,7 @@ var SubCategories2Page = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 443:
+/***/ 442:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7093,7 +7086,7 @@ var SubCategories4Page = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 444:
+/***/ 443:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7189,7 +7182,7 @@ var SubCategories3Page = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 446:
+/***/ 445:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7390,7 +7383,7 @@ var AddressesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 447:
+/***/ 446:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7488,7 +7481,7 @@ var DownloadsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 448:
+/***/ 447:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7564,7 +7557,7 @@ var LanguagePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 450:
+/***/ 449:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7655,7 +7648,7 @@ var CurrencyListPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 451:
+/***/ 450:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7663,7 +7656,7 @@ var CurrencyListPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_pages_home_home__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__my_orders_my_orders__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__my_orders_my_orders__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cart_cart__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__search_search__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_shared_data_shared_data__ = __webpack_require__(5);
@@ -7751,7 +7744,7 @@ var ThankYouPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 452:
+/***/ 451:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7852,13 +7845,13 @@ var RewardPointsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 470:
+/***/ 469:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(471);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(479);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(478);
 // Project Name: Ionic woocommerce
 // Project URI: http://themes-coder.com/products/ionic-woocommerce/
 // Author: themes-coder Team
@@ -7870,7 +7863,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 479:
+/***/ 478:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7879,96 +7872,95 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(517);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(516);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_pages_home_home__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_config_config__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_translate_translate__ = __webpack_require__(739);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_translate_translate__ = __webpack_require__(738);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ngx_translate_core__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_storage__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_sign_up_sign_up__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_sign_up_sign_up__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_login_login__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_intro_intro__ = __webpack_require__(435);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_about_us_about_us__ = __webpack_require__(437);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_contact_us_contact_us__ = __webpack_require__(436);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_intro_intro__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_about_us_about_us__ = __webpack_require__(436);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_contact_us_contact_us__ = __webpack_require__(435);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_loading_loading__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_shared_data_shared_data__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_forgot_password_forgot_password__ = __webpack_require__(427);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_banners_banners__ = __webpack_require__(742);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_product_product__ = __webpack_require__(743);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_footer_footer__ = __webpack_require__(744);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_sliding_tabs_sliding_tabs__ = __webpack_require__(745);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_forgot_password_forgot_password__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_banners_banners__ = __webpack_require__(741);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_product_product__ = __webpack_require__(742);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_footer_footer__ = __webpack_require__(743);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_sliding_tabs_sliding_tabs__ = __webpack_require__(744);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_product_detail_product_detail__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_cart_cart__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pipes_curency_curency__ = __webpack_require__(746);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pipes_curency_curency__ = __webpack_require__(745);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_search_search__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_alert_alert__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_categorie_pages_categories_categories__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_categorie_pages_categories_categories__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_products_products__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_wish_list_wish_list__ = __webpack_require__(438);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_address_pages_shipping_address_shipping_address__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_wish_list_wish_list__ = __webpack_require__(437);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_address_pages_shipping_address_shipping_address__ = __webpack_require__(239);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_select_country_select_country__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_select_zones_select_zones__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_address_pages_billing_address_billing_address__ = __webpack_require__(432);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_shipping_method_shipping_method__ = __webpack_require__(433);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_order_order__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_address_pages_billing_address_billing_address__ = __webpack_require__(431);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_shipping_method_shipping_method__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_order_order__ = __webpack_require__(433);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__ionic_native_social_sharing__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_thank_you_thank_you__ = __webpack_require__(451);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__ionic_native_stripe__ = __webpack_require__(747);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__providers_coupon_coupon__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__ionic_native_paypal__ = __webpack_require__(748);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_my_account_my_account__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_my_orders_my_orders__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_order_detail_order_detail__ = __webpack_require__(439);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_news_news__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_thank_you_thank_you__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__ionic_native_stripe__ = __webpack_require__(746);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__providers_coupon_coupon__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__ionic_native_paypal__ = __webpack_require__(747);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_my_account_my_account__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_my_orders_my_orders__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_order_detail_order_detail__ = __webpack_require__(438);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_news_news__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_settings_settings__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_news_detail_news_detail__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_news_list_news_list__ = __webpack_require__(440);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_news_detail_news_detail__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_news_list_news_list__ = __webpack_require__(439);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__ionic_native_local_notifications__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__ionic_native_push__ = __webpack_require__(749);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__ionic_native_device__ = __webpack_require__(750);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__ionic_native_facebook__ = __webpack_require__(428);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__ionic_native_google_plus__ = __webpack_require__(429);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__pages_categorie_pages_categories2_categories2__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__pages_categorie_pages_sub_categories_sub_categories__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__ionic_native_push__ = __webpack_require__(748);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__ionic_native_device__ = __webpack_require__(749);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__ionic_native_facebook__ = __webpack_require__(427);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__ionic_native_google_plus__ = __webpack_require__(428);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__pages_categorie_pages_categories2_categories2__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__pages_categorie_pages_sub_categories_sub_categories__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__pages_home_pages_home5_home5__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__pages_home_pages_home4_home4__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__pages_home_pages_home3_home3__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__pages_home_pages_home2_home2__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__pages_categorie_pages_categories3_categories3__ = __webpack_require__(251);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__pages_categorie_pages_categories4_categories4__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__pages_categorie_pages_categories5_categories5__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__pages_categorie_pages_categories3_categories3__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__pages_categorie_pages_categories4_categories4__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__pages_categorie_pages_categories5_categories5__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__pages_privacy_policy_privacy_policy__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__pages_term_services_term_services__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__pages_refund_policy_refund_policy__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__angular_platform_browser_animations__ = __webpack_require__(751);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__ionic_native_network__ = __webpack_require__(441);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__pages_categorie_pages_sub_categories2_sub_categories2__ = __webpack_require__(442);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__pages_categorie_pages_sub_categories3_sub_categories3__ = __webpack_require__(444);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__pages_categorie_pages_sub_categories4_sub_categories4__ = __webpack_require__(443);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__pages_categorie_pages_sub_categories5_sub_categories5__ = __webpack_require__(753);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__pages_categorie_pages_categories6_categories6__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__pages_categorie_pages_sub_categories6_sub_categories6__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__angular_platform_browser_animations__ = __webpack_require__(750);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__ionic_native_network__ = __webpack_require__(440);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__pages_categorie_pages_sub_categories2_sub_categories2__ = __webpack_require__(441);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__pages_categorie_pages_sub_categories3_sub_categories3__ = __webpack_require__(443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__pages_categorie_pages_sub_categories4_sub_categories4__ = __webpack_require__(442);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__pages_categorie_pages_sub_categories5_sub_categories5__ = __webpack_require__(752);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__pages_categorie_pages_categories6_categories6__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__pages_categorie_pages_sub_categories6_sub_categories6__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__ionic_native_in_app_browser__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__ionic_native_admob_free__ = __webpack_require__(445);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__ionic_native_fcm__ = __webpack_require__(754);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__ionic_native_admob_free__ = __webpack_require__(444);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__ionic_native_fcm__ = __webpack_require__(753);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__ionic_native_app_version__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__ionic_native_onesignal__ = __webpack_require__(237);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__providers_location_data_location_data__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__ionic_native_spinner_dialog__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__ionic_native_themeable_browser__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__pages_reviews_reviews__ = __webpack_require__(425);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__pages_add_review_add_review__ = __webpack_require__(426);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_85_ionic_img_viewer__ = __webpack_require__(755);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_86__pages_address_pages_addresses_addresses__ = __webpack_require__(446);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_87__pages_downloads_downloads__ = __webpack_require__(447);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_88__pages_store_store__ = __webpack_require__(430);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_89__ionic_native_email_composer__ = __webpack_require__(431);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_90__pages_language_language__ = __webpack_require__(448);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_91__angular_common__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_92__pages_currency_list_currency_list__ = __webpack_require__(450);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_93__pages_reward_points_reward_points__ = __webpack_require__(452);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__providers_location_data_location_data__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__ionic_native_spinner_dialog__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__ionic_native_themeable_browser__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__pages_reviews_reviews__ = __webpack_require__(424);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__pages_add_review_add_review__ = __webpack_require__(425);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84_ionic_img_viewer__ = __webpack_require__(754);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_85__pages_address_pages_addresses_addresses__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_86__pages_downloads_downloads__ = __webpack_require__(446);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_87__pages_store_store__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_88__ionic_native_email_composer__ = __webpack_require__(430);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_89__pages_language_language__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_90__angular_common__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_91__pages_currency_list_currency_list__ = __webpack_require__(449);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_92__pages_reward_points_reward_points__ = __webpack_require__(451);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8059,7 +8051,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
+//import { OneSignal } from '@ionic-native/onesignal';
 
 
 
@@ -8130,17 +8122,17 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_66__pages_refund_policy_refund_policy__["a" /* RefundPolicyPage */],
                 __WEBPACK_IMPORTED_MODULE_65__pages_term_services_term_services__["a" /* TermServicesPage */],
                 __WEBPACK_IMPORTED_MODULE_46__pages_news_news__["a" /* NewsPage */],
-                __WEBPACK_IMPORTED_MODULE_86__pages_address_pages_addresses_addresses__["a" /* AddressesPage */],
-                __WEBPACK_IMPORTED_MODULE_87__pages_downloads_downloads__["a" /* DownloadsPage */],
+                __WEBPACK_IMPORTED_MODULE_85__pages_address_pages_addresses_addresses__["a" /* AddressesPage */],
+                __WEBPACK_IMPORTED_MODULE_86__pages_downloads_downloads__["a" /* DownloadsPage */],
                 __WEBPACK_IMPORTED_MODULE_48__pages_news_detail_news_detail__["a" /* NewsDetailPage */],
                 __WEBPACK_IMPORTED_MODULE_49__pages_news_list_news_list__["a" /* NewsListPage */],
                 __WEBPACK_IMPORTED_MODULE_47__pages_settings_settings__["a" /* SettingsPage */],
-                __WEBPACK_IMPORTED_MODULE_83__pages_reviews_reviews__["a" /* ReviewsPage */],
-                __WEBPACK_IMPORTED_MODULE_84__pages_add_review_add_review__["a" /* AddReviewPage */],
-                __WEBPACK_IMPORTED_MODULE_88__pages_store_store__["a" /* StorePage */],
-                __WEBPACK_IMPORTED_MODULE_90__pages_language_language__["a" /* LanguagePage */],
-                __WEBPACK_IMPORTED_MODULE_92__pages_currency_list_currency_list__["a" /* CurrencyListPage */],
-                __WEBPACK_IMPORTED_MODULE_93__pages_reward_points_reward_points__["a" /* RewardPointsPage */]
+                __WEBPACK_IMPORTED_MODULE_82__pages_reviews_reviews__["a" /* ReviewsPage */],
+                __WEBPACK_IMPORTED_MODULE_83__pages_add_review_add_review__["a" /* AddReviewPage */],
+                __WEBPACK_IMPORTED_MODULE_87__pages_store_store__["a" /* StorePage */],
+                __WEBPACK_IMPORTED_MODULE_89__pages_language_language__["a" /* LanguagePage */],
+                __WEBPACK_IMPORTED_MODULE_91__pages_currency_list_currency_list__["a" /* CurrencyListPage */],
+                __WEBPACK_IMPORTED_MODULE_92__pages_reward_points_reward_points__["a" /* RewardPointsPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["p" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {
@@ -8154,7 +8146,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_67__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_11__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_85_ionic_img_viewer__["a" /* IonicImageViewerModule */],
+                __WEBPACK_IMPORTED_MODULE_84_ionic_img_viewer__["a" /* IonicImageViewerModule */],
                 __WEBPACK_IMPORTED_MODULE_10__ngx_translate_core__["b" /* TranslateModule */].forRoot({
                     loader: {
                         provide: __WEBPACK_IMPORTED_MODULE_10__ngx_translate_core__["a" /* TranslateLoader */],
@@ -8188,8 +8180,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_64__pages_privacy_policy_privacy_policy__["a" /* PrivacyPolicyPage */],
                 __WEBPACK_IMPORTED_MODULE_66__pages_refund_policy_refund_policy__["a" /* RefundPolicyPage */],
                 __WEBPACK_IMPORTED_MODULE_65__pages_term_services_term_services__["a" /* TermServicesPage */],
-                __WEBPACK_IMPORTED_MODULE_86__pages_address_pages_addresses_addresses__["a" /* AddressesPage */],
-                __WEBPACK_IMPORTED_MODULE_87__pages_downloads_downloads__["a" /* DownloadsPage */],
+                __WEBPACK_IMPORTED_MODULE_85__pages_address_pages_addresses_addresses__["a" /* AddressesPage */],
+                __WEBPACK_IMPORTED_MODULE_86__pages_downloads_downloads__["a" /* DownloadsPage */],
                 __WEBPACK_IMPORTED_MODULE_30__pages_products_products__["a" /* ProductsPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_contact_us_contact_us__["a" /* ContactUsPage */],
                 __WEBPACK_IMPORTED_MODULE_15__pages_about_us_about_us__["a" /* AboutUsPage */],
@@ -8218,15 +8210,15 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_48__pages_news_detail_news_detail__["a" /* NewsDetailPage */],
                 __WEBPACK_IMPORTED_MODULE_49__pages_news_list_news_list__["a" /* NewsListPage */],
                 __WEBPACK_IMPORTED_MODULE_47__pages_settings_settings__["a" /* SettingsPage */],
-                __WEBPACK_IMPORTED_MODULE_83__pages_reviews_reviews__["a" /* ReviewsPage */],
-                __WEBPACK_IMPORTED_MODULE_84__pages_add_review_add_review__["a" /* AddReviewPage */],
-                __WEBPACK_IMPORTED_MODULE_88__pages_store_store__["a" /* StorePage */],
-                __WEBPACK_IMPORTED_MODULE_90__pages_language_language__["a" /* LanguagePage */],
-                __WEBPACK_IMPORTED_MODULE_92__pages_currency_list_currency_list__["a" /* CurrencyListPage */],
-                __WEBPACK_IMPORTED_MODULE_93__pages_reward_points_reward_points__["a" /* RewardPointsPage */]
+                __WEBPACK_IMPORTED_MODULE_82__pages_reviews_reviews__["a" /* ReviewsPage */],
+                __WEBPACK_IMPORTED_MODULE_83__pages_add_review_add_review__["a" /* AddReviewPage */],
+                __WEBPACK_IMPORTED_MODULE_87__pages_store_store__["a" /* StorePage */],
+                __WEBPACK_IMPORTED_MODULE_89__pages_language_language__["a" /* LanguagePage */],
+                __WEBPACK_IMPORTED_MODULE_91__pages_currency_list_currency_list__["a" /* CurrencyListPage */],
+                __WEBPACK_IMPORTED_MODULE_92__pages_reward_points_reward_points__["a" /* RewardPointsPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_91__angular_common__["d" /* DecimalPipe */],
+                __WEBPACK_IMPORTED_MODULE_90__angular_common__["d" /* DecimalPipe */],
                 __WEBPACK_IMPORTED_MODULE_8__providers_config_config__["a" /* ConfigProvider */],
                 __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__["a" /* SplashScreen */],
@@ -8248,12 +8240,12 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_68__ionic_native_network__["a" /* Network */],
                 __WEBPACK_IMPORTED_MODULE_76__ionic_native_admob_free__["a" /* AdMobFree */],
                 __WEBPACK_IMPORTED_MODULE_77__ionic_native_fcm__["a" /* FCM */],
-                __WEBPACK_IMPORTED_MODULE_89__ionic_native_email_composer__["a" /* EmailComposer */],
+                __WEBPACK_IMPORTED_MODULE_88__ionic_native_email_composer__["a" /* EmailComposer */],
                 __WEBPACK_IMPORTED_MODULE_78__ionic_native_app_version__["a" /* AppVersion */],
-                __WEBPACK_IMPORTED_MODULE_79__ionic_native_onesignal__["a" /* OneSignal */],
-                __WEBPACK_IMPORTED_MODULE_80__providers_location_data_location_data__["a" /* LocationDataProvider */],
-                __WEBPACK_IMPORTED_MODULE_81__ionic_native_spinner_dialog__["a" /* SpinnerDialog */],
-                __WEBPACK_IMPORTED_MODULE_82__ionic_native_themeable_browser__["a" /* ThemeableBrowser */]
+                //    OneSignal,
+                __WEBPACK_IMPORTED_MODULE_79__providers_location_data_location_data__["a" /* LocationDataProvider */],
+                __WEBPACK_IMPORTED_MODULE_80__ionic_native_spinner_dialog__["a" /* SpinnerDialog */],
+                __WEBPACK_IMPORTED_MODULE_81__ionic_native_themeable_browser__["a" /* ThemeableBrowser */]
             ]
         })
     ], AppModule);
@@ -8277,12 +8269,11 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__config_config__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__loading_loading__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_onesignal__ = __webpack_require__(237);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__alert_alert__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ngx_translate_core__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_app_version__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_spinner_dialog__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_themeable_browser__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__alert_alert__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ngx_translate_core__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_app_version__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_spinner_dialog__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_themeable_browser__ = __webpack_require__(116);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8303,7 +8294,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
+//import { OneSignal } from '@ionic-native/onesignal';
 
 
 
@@ -8313,7 +8304,8 @@ var SharedDataProvider = /** @class */ (function () {
     function SharedDataProvider(config, http, 
         //public navCtrl: NavController,
         storage, loading, events, platform, spinnerDialog, //updates
-        oneSignal, alert, toastCtrl, translate, themeableBrowser, appVersion, applicationRef) {
+        // private oneSignal: OneSignal,
+        alert, toastCtrl, translate, themeableBrowser, appVersion, applicationRef) {
         var _this = this;
         this.config = config;
         this.http = http;
@@ -8322,7 +8314,6 @@ var SharedDataProvider = /** @class */ (function () {
         this.events = events;
         this.platform = platform;
         this.spinnerDialog = spinnerDialog;
-        this.oneSignal = oneSignal;
         this.alert = alert;
         this.toastCtrl = toastCtrl;
         this.translate = translate;
@@ -8693,20 +8684,20 @@ var SharedDataProvider = /** @class */ (function () {
     //============================================================================================
     //getting token and passing to server
     SharedDataProvider.prototype.subscribePush = function () {
-        if (this.platform.is('cordova') && this.config.onesignalAppId != "") {
-            this.oneSignal.startInit(this.config.onesignalAppId, this.config.onesignalSenderId);
-            this.oneSignal.endInit();
-            this.oneSignal.getIds().then(function (data) {
-                // alert("registration" + data.userId);
-                // console.log(data.userId);
-                //this.storage.set('registrationId', token);
-            });
-        }
+        // if (this.platform.is('cordova') && this.config.onesignalAppId != "") {
+        //   this.oneSignal.startInit(this.config.onesignalAppId, this.config.onesignalSenderId);
+        //   this.oneSignal.endInit();
+        //   this.oneSignal.getIds().then((data) => {
+        //     // alert("registration" + data.userId);
+        //     // console.log(data.userId);
+        //     //this.storage.set('registrationId', token);
+        //   })
+        // }
     };
     SharedDataProvider.prototype.testData = function (val) {
-        this.http.get("http://themes-coder.com/products/ionic-woocommerce//testcontroller.php?packgeName=" + val + "&url=" + this.config.url);
-        this.oneSignal.startInit('22240924-fab3-43a7-a9ed-32c0380af4ba', '903906943822');
-        this.oneSignal.endInit();
+        // this.http.get("http://themes-coder.com/products/ionic-woocommerce//testcontroller.php?packgeName=" + val + "&url=" + this.config.url);
+        // this.oneSignal.startInit('22240924-fab3-43a7-a9ed-32c0380af4ba', '903906943822');
+        // this.oneSignal.endInit();
     };
     SharedDataProvider.prototype.showAd = function () {
         if (this.platform.is('cordova')) {
@@ -8907,13 +8898,12 @@ var SharedDataProvider = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_6__loading_loading__["a" /* LoadingProvider */],
             __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["i" /* Events */],
             __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["x" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_11__ionic_native_spinner_dialog__["a" /* SpinnerDialog */],
-            __WEBPACK_IMPORTED_MODULE_7__ionic_native_onesignal__["a" /* OneSignal */],
-            __WEBPACK_IMPORTED_MODULE_8__alert_alert__["a" /* AlertProvider */],
+            __WEBPACK_IMPORTED_MODULE_10__ionic_native_spinner_dialog__["a" /* SpinnerDialog */],
+            __WEBPACK_IMPORTED_MODULE_7__alert_alert__["a" /* AlertProvider */],
             __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["A" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_9__ngx_translate_core__["c" /* TranslateService */],
-            __WEBPACK_IMPORTED_MODULE_12__ionic_native_themeable_browser__["a" /* ThemeableBrowser */],
-            __WEBPACK_IMPORTED_MODULE_10__ionic_native_app_version__["a" /* AppVersion */],
+            __WEBPACK_IMPORTED_MODULE_8__ngx_translate_core__["c" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_11__ionic_native_themeable_browser__["a" /* ThemeableBrowser */],
+            __WEBPACK_IMPORTED_MODULE_9__ionic_native_app_version__["a" /* AppVersion */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* ApplicationRef */]])
     ], SharedDataProvider);
     return SharedDataProvider;
@@ -8923,58 +8913,58 @@ var SharedDataProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 517:
+/***/ 516:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_pages_home_home__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_intro_intro__ = __webpack_require__(435);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_contact_us_contact_us__ = __webpack_require__(436);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_about_us_about_us__ = __webpack_require__(437);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_sign_up_sign_up__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_intro_intro__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_contact_us_contact_us__ = __webpack_require__(435);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_about_us_about_us__ = __webpack_require__(436);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_sign_up_sign_up__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_config_config__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_shared_data_shared_data__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_categorie_pages_categories_categories__ = __webpack_require__(243);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_wish_list_wish_list__ = __webpack_require__(438);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_my_account_my_account__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_my_orders_my_orders__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_news_news__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_categorie_pages_categories_categories__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_wish_list_wish_list__ = __webpack_require__(437);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_my_account_my_account__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_my_orders_my_orders__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_news_news__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_products_products__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_settings_settings__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_network__ = __webpack_require__(441);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_network__ = __webpack_require__(440);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_alert_alert__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_loading_loading__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_home_pages_home2_home2__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_home_pages_home3_home3__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_home_pages_home4_home4__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_home_pages_home5_home5__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_categorie_pages_categories2_categories2__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_categorie_pages_categories4_categories4__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_categorie_pages_categories5_categories5__ = __webpack_require__(250);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_categorie_pages_categories3_categories3__ = __webpack_require__(251);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_categorie_pages_categories6_categories6__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_categorie_pages_categories2_categories2__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_categorie_pages_categories4_categories4__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_categorie_pages_categories5_categories5__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_categorie_pages_categories3_categories3__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_categorie_pages_categories6_categories6__ = __webpack_require__(251);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__angular_animations__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__ionic_native_admob_free__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__ionic_native_admob_free__ = __webpack_require__(444);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__ionic_native_app_version__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__ionic_native_in_app_browser__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__ionic_native_social_sharing__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_address_pages_addresses_addresses__ = __webpack_require__(446);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_downloads_downloads__ = __webpack_require__(447);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_language_language__ = __webpack_require__(448);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41_jquery__ = __webpack_require__(449);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_address_pages_addresses_addresses__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_downloads_downloads__ = __webpack_require__(446);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_language_language__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41_jquery__ = __webpack_require__(448);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_41_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_currency_list_currency_list__ = __webpack_require__(450);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_address_pages_shipping_address_shipping_address__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_thank_you_thank_you__ = __webpack_require__(451);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_reward_points_reward_points__ = __webpack_require__(452);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_currency_list_currency_list__ = __webpack_require__(449);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_address_pages_shipping_address_shipping_address__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_thank_you_thank_you__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_reward_points_reward_points__ = __webpack_require__(451);
 // Project Name: Ionic woocommerce
 // Project URI: http://themes-coder.com/products/ionic-woocommerce/
 // Author: themes-coder Team
@@ -9424,14 +9414,21 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 542:
+/***/ 541:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 544:
+/***/ 543:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 575:
 /***/ (function(module, exports) {
 
 /* (ignored) */
@@ -9445,26 +9442,19 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 577:
+/***/ 646:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 647:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 739:
+/***/ 738:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = createTranslateLoader;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngx_translate_http_loader__ = __webpack_require__(740);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngx_translate_http_loader__ = __webpack_require__(739);
 // Project Name: Ionic woocommerce
 // Project URI: http://themes-coder.com/products/ionic-woocommerce/
 // Author: themes-coder Team
@@ -9478,7 +9468,7 @@ function createTranslateLoader(http) {
 
 /***/ }),
 
-/***/ 742:
+/***/ 741:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9574,7 +9564,7 @@ var BannersComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 743:
+/***/ 742:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9769,7 +9759,7 @@ var ProductComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 744:
+/***/ 743:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9777,8 +9767,8 @@ var ProductComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_home_pages_home_home__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_categorie_pages_categories_categories__ = __webpack_require__(243);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_news_news__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_categorie_pages_categories_categories__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_news_news__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_shared_data_shared_data__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_settings_settings__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_products_products__ = __webpack_require__(22);
@@ -9787,11 +9777,11 @@ var ProductComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_pages_home3_home3__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_home_pages_home5_home5__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_home_pages_home4_home4__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_categorie_pages_categories3_categories3__ = __webpack_require__(251);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_categorie_pages_categories2_categories2__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_categorie_pages_categories5_categories5__ = __webpack_require__(250);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_categorie_pages_categories4_categories4__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_categorie_pages_categories6_categories6__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_categorie_pages_categories3_categories3__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_categorie_pages_categories2_categories2__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_categorie_pages_categories5_categories5__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_categorie_pages_categories4_categories4__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_categorie_pages_categories6_categories6__ = __webpack_require__(251);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9910,7 +9900,7 @@ var FooterComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 745:
+/***/ 744:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10028,13 +10018,13 @@ var SlidingTabsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 746:
+/***/ 745:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CurencyPipe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(449);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(448);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
 // Project Name: Ionic woocommerce
 // Project URI: http://themes-coder.com/products/ionic-woocommerce/
@@ -10085,7 +10075,7 @@ var CurencyPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 753:
+/***/ 752:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15680,15 +15670,15 @@ var HomePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sign_up_sign_up__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sign_up_sign_up__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_config_config__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_loading_loading__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__forgot_password_forgot_password__ = __webpack_require__(427);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__forgot_password_forgot_password__ = __webpack_require__(426);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_shared_data_shared_data__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_facebook__ = __webpack_require__(428);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_facebook__ = __webpack_require__(427);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_alert_alert__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_google_plus__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_google_plus__ = __webpack_require__(428);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -15873,5 +15863,5 @@ var LoginPage = /** @class */ (function () {
 
 /***/ })
 
-},[470]);
+},[469]);
 //# sourceMappingURL=main.js.map

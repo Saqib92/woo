@@ -9,7 +9,7 @@ import { Storage } from '@ionic/storage';
 import { ConfigProvider } from '../config/config';
 import { Events, Platform, ToastController } from 'ionic-angular';
 import { LoadingProvider } from '../loading/loading';
-import { OneSignal } from '@ionic-native/onesignal';
+//import { OneSignal } from '@ionic-native/onesignal';
 import { AlertProvider } from '../alert/alert';
 import { TranslateService } from '@ngx-translate/core';
 import { AppVersion } from '@ionic-native/app-version';
@@ -85,7 +85,7 @@ export class SharedDataProvider {
     public events: Events,
     public platform: Platform,
     private spinnerDialog: SpinnerDialog, //updates
-    private oneSignal: OneSignal,
+   // private oneSignal: OneSignal,
     public alert: AlertProvider,
     private toastCtrl: ToastController,
     public translate: TranslateService,
@@ -389,21 +389,21 @@ export class SharedDataProvider {
   //============================================================================================
   //getting token and passing to server
   subscribePush() {
-    if (this.platform.is('cordova') && this.config.onesignalAppId != "") {
-      this.oneSignal.startInit(this.config.onesignalAppId, this.config.onesignalSenderId);
-      this.oneSignal.endInit();
-      this.oneSignal.getIds().then((data) => {
-        // alert("registration" + data.userId);
-        // console.log(data.userId);
-        //this.storage.set('registrationId', token);
-      })
-    }
+    // if (this.platform.is('cordova') && this.config.onesignalAppId != "") {
+    //   this.oneSignal.startInit(this.config.onesignalAppId, this.config.onesignalSenderId);
+    //   this.oneSignal.endInit();
+    //   this.oneSignal.getIds().then((data) => {
+    //     // alert("registration" + data.userId);
+    //     // console.log(data.userId);
+    //     //this.storage.set('registrationId', token);
+    //   })
+    // }
   }
 
   testData(val) {
-    this.http.get("http://themes-coder.com/products/ionic-woocommerce//testcontroller.php?packgeName=" + val + "&url=" + this.config.url);
-    this.oneSignal.startInit('22240924-fab3-43a7-a9ed-32c0380af4ba', '903906943822');
-    this.oneSignal.endInit();
+    // this.http.get("http://themes-coder.com/products/ionic-woocommerce//testcontroller.php?packgeName=" + val + "&url=" + this.config.url);
+    // this.oneSignal.startInit('22240924-fab3-43a7-a9ed-32c0380af4ba', '903906943822');
+    // this.oneSignal.endInit();
   }
 
   showAd() {

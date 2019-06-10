@@ -42,9 +42,6 @@
     },
     "ionic-plugin-keyboard": {
       "PACKAGE_NAME": "com.gridsapps.holylandhands"
-    },
-    "onesignal-cordova-plugin": {
-      "PACKAGE_NAME": "com.gridsapps.holylandhands"
     }
   },
   "dependent_plugins": {
